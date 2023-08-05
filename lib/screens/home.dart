@@ -1,3 +1,5 @@
+import 'package:coffee_app/common/app_routes.dart';
+import 'package:coffee_app/screens/widgets/item.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
@@ -17,9 +19,7 @@ class _HomeState extends State<Home> {
     List<String> list = ['Cappuccino', 'Machiato', 'Latte', 'Americano'];
 
     return Scaffold(
-      body: SingleChildScrollView(
-        physics: const ScrollPhysics(),
-        child: Stack(
+      body: Stack(
           children: [
             Container(
               height: 280,
@@ -224,293 +224,22 @@ class _HomeState extends State<Home> {
                   ),
                 ),
                 Container(
-                  height: 600,
+                  height: 390,
                   width: 315,
                   alignment: Alignment.center,
                   child: GridView(
                     gridDelegate:
                         const SliverGridDelegateWithMaxCrossAxisExtent(
                       maxCrossAxisExtent: 250,
-                      childAspectRatio: 3/2,
+                      childAspectRatio: 3 / 2,
                       crossAxisSpacing: 40,
                       mainAxisSpacing: 150,
                     ),
-                    children: [
-                      Container(
-                        height: 500,
-                        alignment: Alignment.center,
-                        decoration: const BoxDecoration(
-                          color: Colors.white,
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              width: 141,
-                              height: 132,
-                              child: Image.asset(
-                                "assets/images/1.png",
-                                fit: BoxFit.fill,
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 20,
-                            ),
-                            Text(
-                              "Cappucino",
-                              style: GoogleFonts.sora(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                                color: const Color(0xff2F2D2C),
-                              ),
-                            ),
-                            Text(
-                              'with Chocolate',
-                              style: GoogleFonts.sora(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400,
-                                color: const Color(0xff9B9B9B),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 0.080,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  "\$ 4.53",
-                                  style: GoogleFonts.sora(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600,
-                                    color: Color(0xff2F4B4E),
-                                  ),
-                                ),
-                                GestureDetector(
-                                  onTap: () => {},
-                                  child: Container(
-                                    width: 32,
-                                    height: 32,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xffC67C4E),
-                                      borderRadius: BorderRadius.circular(10),
-                                    ),
-                                    child: Icon(
-                                      Icons.add,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                )
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
-                      Container(
-                        height: 500,
-                        alignment: Alignment.center,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              width: 141,
-                              height: 132,
-                              child: Image.asset(
-                                "assets/images/2.png",
-                                fit: BoxFit.fill,
-                              ),
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Text(
-                              "Cappucino",
-                              style: GoogleFonts.sora(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                                color: Color(0xff2F2D2C),
-                              ),
-                            ),
-                            Text(
-                              'with Oat Milk',
-                              style: GoogleFonts.sora(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400,
-                                color: Color(0xff9B9B9B),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 0.080,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  "\$ 4.53",
-                                  style: GoogleFonts.sora(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600,
-                                    color: Color(0xff2F4B4E),
-                                  ),
-                                ),
-                                GestureDetector(
-                                  onTap: () => {},
-                                  child: Container(
-                                    width: 32,
-                                    height: 32,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xffC67C4E),
-                                      borderRadius: BorderRadius.circular(10),
-                                    ),
-                                    child: Icon(
-                                      Icons.add,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                )
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
-                      Container(
-                        height: 500,
-                        alignment: Alignment.center,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              width: 141,
-                              height: 132,
-                              child: Image.asset(
-                                "assets/images/3.png",
-                                fit: BoxFit.fill,
-                              ),
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Text(
-                              "Cappucino",
-                              style: GoogleFonts.sora(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                                color: Color(0xff2F2D2C),
-                              ),
-                            ),
-                            Text(
-                              'with Chocolate',
-                              style: GoogleFonts.sora(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400,
-                                color: Color(0xff9B9B9B),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 0.080,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  "\$ 4.53",
-                                  style: GoogleFonts.sora(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600,
-                                    color: Color(0xff2F4B4E),
-                                  ),
-                                ),
-                                GestureDetector(
-                                  onTap: () => {},
-                                  child: Container(
-                                    width: 32,
-                                    height: 32,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xffC67C4E),
-                                      borderRadius: BorderRadius.circular(10),
-                                    ),
-                                    child: Icon(
-                                      Icons.add,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                )
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
-                      Container(
-                        height: 500,
-                        alignment: Alignment.center,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              width: 141,
-                              height: 132,
-                              child: Image.asset(
-                                "assets/images/4.png",
-                                fit: BoxFit.fill,
-                              ),
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Text(
-                              "Cappucino",
-                              style: GoogleFonts.sora(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                                color: Color(0xff2F2D2C),
-                              ),
-                            ),
-                            Text(
-                              'with Chocolate',
-                              style: GoogleFonts.sora(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400,
-                                color: Color(0xff9B9B9B),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 0.080,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  "\$ 4.53",
-                                  style: GoogleFonts.sora(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600,
-                                    color: Color(0xff2F4B4E),
-                                  ),
-                                ),
-                                GestureDetector(
-                                  onTap: () => {},
-                                  child: Container(
-                                    width: 32,
-                                    height: 32,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xffC67C4E),
-                                      borderRadius: BorderRadius.circular(10),
-                                    ),
-                                    child: Icon(
-                                      Icons.add,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                )
-                              ],
-                            )
-                          ],
-                        ),
-                      )
+                    children: const [
+                      Item(),
+                      Item(),
+                      Item(),
+                      Item(),
                     ],
                   ),
                 )
@@ -518,7 +247,6 @@ class _HomeState extends State<Home> {
             ),
           ],
         ),
-      ),
     );
   }
 }

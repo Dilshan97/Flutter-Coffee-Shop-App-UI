@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const Welcome(),
-      initialRoute: AppRoutes.detail,
+      initialRoute: AppRoutes.welcome,
       onGenerateRoute: RouteGenerator.generateRoute,
     );
   }

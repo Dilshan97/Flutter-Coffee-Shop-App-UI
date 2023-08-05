@@ -17,7 +17,7 @@ class RouteGenerator {
           const Home(),
           settings: settings,
         );
-        case AppRoutes.detail:
+      case AppRoutes.detail:
         return buildRoute(
           const Detail(),
           settings: settings,
