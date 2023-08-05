@@ -1,4 +1,5 @@
 import 'package:coffee_app/common/app_routes.dart';
+import 'package:coffee_app/screens/widgets/category_item.dart';
 import 'package:coffee_app/screens/widgets/item.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,235 +19,211 @@ class _HomeState extends State<Home> {
 
     List<String> list = ['Cappuccino', 'Machiato', 'Latte', 'Americano'];
 
+    int selectedCategory = 0;
+
     return Scaffold(
       body: Stack(
-          children: [
-            Container(
-              height: 280,
-              width: size.width,
-              decoration: const BoxDecoration(color: Color(0xff131313)),
-            ),
-            Column(
-              children: [
-                Center(
-                  child: SizedBox(
-                    width: 315,
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          height: size.height * 0.060,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Location",
-                                  style: GoogleFonts.sora(
-                                    color: const Color(0xffB7B7B7),
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
-                                Row(
-                                  children: [
-                                    Text(
-                                      "Bilzen, Tanjungbalai",
-                                      style: GoogleFonts.sora(
-                                        color: const Color(0xffDDDDDD),
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                    const Icon(
-                                      Icons.keyboard_arrow_down,
-                                      color: Colors.white,
-                                    )
-                                  ],
-                                )
-                              ],
-                            ),
-                            SizedBox(
-                              width: 44,
-                              height: 44,
-                              child: Image.asset(
-                                "assets/images/avatar.png",
-                                fit: BoxFit.fill,
-                              ),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          height: size.height * 0.030,
-                        ),
-                        SizedBox(
-                          height: 52,
-                          child: TextFormField(
-                            decoration: InputDecoration(
-                              filled: true,
-                              fillColor: const Color(0xff313131),
-                              contentPadding: const EdgeInsets.only(
-                                top: 23,
-                                bottom: 2,
-                                right: 5,
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              hintText: "Search coffee",
-                              hintStyle: GoogleFonts.sora(
-                                color: const Color(0xff989898),
-                              ),
-                              prefixIcon: const Icon(
-                                Iconsax.search_normal,
-                                color: Colors.white,
-                                size: 20,
-                              ),
-                              suffixIcon: Container(
-                                width: 44,
-                                height: 44,
-                                padding: const EdgeInsets.all(8),
-                                decoration: BoxDecoration(
-                                  color: const Color(0xffC67C4E),
-                                  borderRadius: BorderRadius.circular(12),
-                                ),
-                                child: const Icon(
-                                  Iconsax.setting_4,
-                                  color: Colors.white,
-                                  size: 20,
+        children: [
+          Container(
+            height: 280,
+            width: size.width,
+            decoration: const BoxDecoration(color: Color(0xff131313)),
+          ),
+          Column(
+            children: [
+              Center(
+                child: SizedBox(
+                  width: 315,
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: size.height * 0.060,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Location",
+                                style: GoogleFonts.sora(
+                                  color: const Color(0xffB7B7B7),
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w400,
                                 ),
                               ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: size.height * 0.020,
-                        ),
-                        Container(
-                          width: 315,
-                          height: 140,
-                          decoration: BoxDecoration(
-                            image: const DecorationImage(
-                              image: AssetImage("assets/images/banner.png"),
-                              fit: BoxFit.contain,
-                            ),
-                            borderRadius: BorderRadius.circular(16),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Container(
-                                  width: 60,
-                                  height: 26,
-                                  alignment: Alignment.center,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xffED5151),
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
-                                  child: Text(
-                                    "Promo",
+                              Row(
+                                children: [
+                                  Text(
+                                    "Bilzen, Tanjungbalai",
                                     style: GoogleFonts.sora(
-                                      color: Colors.white,
+                                      color: const Color(0xffDDDDDD),
                                       fontSize: 14,
                                       fontWeight: FontWeight.w600,
                                     ),
                                   ),
-                                ),
-                                Text(
-                                  "Buy one get \none FREE",
-                                  style: GoogleFonts.sora(
-                                    fontSize: 32,
-                                    fontWeight: FontWeight.w600,
+                                  const Icon(
+                                    Icons.keyboard_arrow_down,
                                     color: Colors.white,
-                                  ),
-                                )
-                              ],
-                            ),
+                                  )
+                                ],
+                              )
+                            ],
                           ),
-                        ),
-                        SizedBox(
-                          height: size.height * 0.030,
-                        ),
-                        SizedBox(
-                          height: 40,
-                          child: SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Row(
-                              children: List.generate(
-                                list.length,
-                                (index) => Container(
-                                  width: 121,
-                                  height: 38,
-                                  margin: const EdgeInsets.only(
-                                    right: 8,
-                                  ),
-                                  alignment: Alignment.center,
-                                  decoration: BoxDecoration(
-                                    color: index == 0
-                                        ? const Color(0xffC67C4E)
-                                        : Colors.white,
-                                    borderRadius: BorderRadius.circular(12),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.white.withOpacity(0.9),
-                                        spreadRadius: 1,
-                                        blurRadius: 2,
-                                      ),
-                                    ],
-                                  ),
-                                  child: Text(
-                                    list[index],
-                                    style: GoogleFonts.sora(
-                                      color: index == 0
-                                          ? Colors.white
-                                          : Colors.black,
-                                      fontSize: 14,
-                                      fontWeight: index == 0
-                                          ? FontWeight.w600
-                                          : FontWeight.w400,
-                                    ),
-                                  ),
-                                ),
+                          SizedBox(
+                            width: 44,
+                            height: 44,
+                            child: Image.asset(
+                              "assets/images/avatar.png",
+                              fit: BoxFit.fill,
+                            ),
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        height: size.height * 0.030,
+                      ),
+                      SizedBox(
+                        height: 52,
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            filled: true,
+                            fillColor: const Color(0xff313131),
+                            contentPadding: const EdgeInsets.only(
+                              top: 23,
+                              bottom: 2,
+                              right: 5,
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            hintText: "Search coffee",
+                            hintStyle: GoogleFonts.sora(
+                              color: const Color(0xff989898),
+                            ),
+                            prefixIcon: const Icon(
+                              Iconsax.search_normal,
+                              color: Colors.white,
+                              size: 20,
+                            ),
+                            suffixIcon: Container(
+                              width: 44,
+                              height: 44,
+                              padding: const EdgeInsets.all(8),
+                              decoration: BoxDecoration(
+                                color: const Color(0xffC67C4E),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: const Icon(
+                                Iconsax.setting_4,
+                                color: Colors.white,
+                                size: 20,
                               ),
                             ),
                           ),
                         ),
-                      ],
-                    ),
-                  ),
-                ),
-                Container(
-                  height: 390,
-                  width: 315,
-                  alignment: Alignment.center,
-                  child: GridView(
-                    gridDelegate:
-                        const SliverGridDelegateWithMaxCrossAxisExtent(
-                      maxCrossAxisExtent: 250,
-                      childAspectRatio: 3 / 2,
-                      crossAxisSpacing: 40,
-                      mainAxisSpacing: 150,
-                    ),
-                    children: const [
-                      Item(),
-                      Item(),
-                      Item(),
-                      Item(),
+                      ),
+                      SizedBox(
+                        height: size.height * 0.020,
+                      ),
+                      Container(
+                        width: 315,
+                        height: 140,
+                        decoration: BoxDecoration(
+                          image: const DecorationImage(
+                            image: AssetImage("assets/images/banner.png"),
+                            fit: BoxFit.contain,
+                          ),
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                width: 60,
+                                height: 26,
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                  color: const Color(0xffED5151),
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                child: Text(
+                                  "Promo",
+                                  style: GoogleFonts.sora(
+                                    color: Colors.white,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ),
+                              Text(
+                                "Buy one get \none FREE",
+                                style: GoogleFonts.sora(
+                                  fontSize: 32,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.white,
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: size.height * 0.030,
+                      ),
+                      SizedBox(
+                        height: 40,
+                        child: SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            children: List.generate(
+                              list.length,
+                              (index) => CategoryItem(
+                                index: index,
+                                title: list[index],
+                                selectedCategory: selectedCategory,
+                                onClick: () => {
+                                  setState(() => selectedCategory = index)
+                                },
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
                     ],
                   ),
-                )
-              ],
-            ),
-          ],
-        ),
+                ),
+              ),
+              Container(
+                height: 390,
+                width: 315,
+                alignment: Alignment.center,
+                child: GridView(
+                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                    maxCrossAxisExtent: 250,
+                    childAspectRatio: 3 / 2,
+                    crossAxisSpacing: 40,
+                    mainAxisSpacing: 150,
+                  ),
+                  children: const [
+                    Item(),
+                    Item(),
+                    Item(),
+                    Item(),
+                  ],
+                ),
+              )
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
