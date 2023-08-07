@@ -1,3 +1,4 @@
+import 'package:coffee_app/screens/delivery.dart';
 import 'package:coffee_app/screens/detail.dart';
 import 'package:coffee_app/screens/home.dart';
 import 'package:coffee_app/screens/order.dart';
@@ -26,6 +27,11 @@ class RouteGenerator {
       case Routes.order:
         return buildRoute(
           const Order(),
+          settings: settings,
+        );
+      case Routes.delivery:
+        return buildRoute(
+          const Delivery(),
           settings: settings,
         );
       default:

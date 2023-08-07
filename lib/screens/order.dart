@@ -1,3 +1,4 @@
+import 'package:coffee_app/common/app_routes.dart';
 import 'package:coffee_app/screens/widgets/custom_button.dart';
 import 'package:coffee_app/screens/widgets/type_toggle.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,9 @@ class _OrderState extends State<Order> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         title: Text(
           'Order',
           style: GoogleFonts.sora(
@@ -78,7 +81,7 @@ class _OrderState extends State<Order> {
                       style: GoogleFonts.sora(
                         fontSize: 12,
                         fontWeight: FontWeight.w600,
-                        color: Color(0xff808080),
+                        color: const Color(0xff808080),
                       ),
                       textAlign: TextAlign.start,
                     ),
@@ -156,7 +159,9 @@ class _OrderState extends State<Order> {
                     ),
                     Container(
                       height: 2,
-                      decoration: const BoxDecoration(color: Color(0xffEAEAEA)),
+                      decoration: const BoxDecoration(
+                        color: Color(0xffEAEAEA),
+                      ),
                     )
                   ],
                 ),
@@ -176,7 +181,7 @@ class _OrderState extends State<Order> {
                           width: 54,
                           height: 54,
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(12),
+                            borderRadius: BorderRadius.circular(12),
                           ),
                           child: Image.asset(
                             "assets/images/1.png",
@@ -194,7 +199,7 @@ class _OrderState extends State<Order> {
                               style: GoogleFonts.sora(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w600,
-                                color: Color(0xff2F2D2C),
+                                color: const Color(0xff2F2D2C),
                               ),
                             ),
                             const SizedBox(
@@ -205,7 +210,7 @@ class _OrderState extends State<Order> {
                               style: GoogleFonts.sora(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w400,
-                                color: Color(0xff9B9B9B),
+                                color: const Color(0xff9B9B9B),
                               ),
                             )
                           ],
@@ -301,7 +306,7 @@ class _OrderState extends State<Order> {
                     Row(
                       children: [
                         const Icon(
-                          Iconsax.discount_shape,
+                          Iconsax.discount_shape5,
                           size: 24,
                           color: Color(0xffC67C4E),
                         ),
@@ -327,7 +332,7 @@ class _OrderState extends State<Order> {
               const SizedBox(
                 height: 20,
               ),
-              Container(
+              SizedBox(
                 width: 315,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -446,7 +451,7 @@ class _OrderState extends State<Order> {
                           Row(
                             children: [
                               const Icon(
-                                Iconsax.money,
+                                Iconsax.moneys,
                                 color: Color(0xffC67C4E),
                                 weight: 24,
                               ),
@@ -467,9 +472,9 @@ class _OrderState extends State<Order> {
                                       height: 24,
                                       alignment: Alignment.center,
                                       decoration: BoxDecoration(
-                                          color: Color(0xffC67C4E),
-                                          borderRadius:
-                                              BorderRadius.circular(20)),
+                                        color: Color(0xffC67C4E),
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
                                       child: Text(
                                         "Cash",
                                         style: GoogleFonts.sora(
@@ -519,7 +524,7 @@ class _OrderState extends State<Order> {
                       height: 62,
                       child: CustomButton(
                         title: 'Order',
-                        onPressed: () {},
+                        onPressed: () => Navigator.of(context).pushNamed(Routes.delivery),
                       ),
                     )
                   ],
