@@ -89,6 +89,9 @@ class _DetailState extends State<Detail> {
                         fontWeight: FontWeight.w600,
                         color: Color(0xff2F2D2C)),
                   ),
+                  const SizedBox(
+                    height: 8,
+                  ),
                   Text(
                     "with Chocolate",
                     style: GoogleFonts.sora(
@@ -96,71 +99,74 @@ class _DetailState extends State<Detail> {
                         fontWeight: FontWeight.w400,
                         color: Color(0xff9B9B9B)),
                   ),
+                ],
+              ),
+            ),
+            SizedBox(
+              width: 340,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          const SizedBox(
-                            width: 40,
-                            height: 40,
-                            child: Icon(
-                              Iconsax.star1,
-                              color: Color(0xffFBBE21),
-                            ),
-                          ),
-                          Text(
-                            "4.8",
-                            style: GoogleFonts.sora(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
-                              color: const Color(0xff2F2D2C),
-                            ),
-                          ),
-                          SizedBox(
-                            width: size.width * 0.010,
-                          ),
-                          Text(
-                            "(230)",
-                            style: GoogleFonts.sora(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          )
-                        ],
+                      const SizedBox(
+                        width: 40,
+                        height: 40,
+                        child: Icon(
+                          Iconsax.star1,
+                          color: Color(0xffFBBE21),
+                        ),
                       ),
-                      Row(
-                        children: [
-                          Container(
-                            width: 44,
-                            height: 44,
-                            decoration: BoxDecoration(
-                              color: const Color(0xffF9F9F9),
-                              borderRadius: BorderRadius.circular(14),
-                            ),
-                            child: const Icon(
-                              Icons.beach_access_rounded,
-                              color: Color(0xffC67C4E),
-                            ),
-                          ),
-                          SizedBox(
-                            width: size.width * 0.020,
-                          ),
-                          Container(
-                            width: 44,
-                            height: 44,
-                            decoration: BoxDecoration(
-                              color: const Color(0xffF9F9F9),
-                              borderRadius: BorderRadius.circular(14),
-                            ),
-                            child: const Icon(
-                              Icons.bolt_outlined,
-                              color: Color(0xffC67C4E),
-                            ),
-                          )
-                        ],
+                      Text(
+                        "4.8",
+                        style: GoogleFonts.sora(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: const Color(0xff2F2D2C),
+                        ),
+                      ),
+                      SizedBox(
+                        width: size.width * 0.010,
+                      ),
+                      Text(
+                        "(230)",
+                        style: GoogleFonts.sora(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      )
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        width: 44,
+                        height: 44,
+                        decoration: BoxDecoration(
+                          color: const Color(0xffF9F9F9),
+                          borderRadius: BorderRadius.circular(14),
+                        ),
+                        child: const Icon(
+                          Icons.beach_access_rounded,
+                          color: Color(0xffC67C4E),
+                        ),
+                      ),
+                      SizedBox(
+                        width: size.width * 0.020,
+                      ),
+                      Container(
+                        width: 44,
+                        height: 44,
+                        decoration: BoxDecoration(
+                          color: const Color(0xffF9F9F9),
+                          borderRadius: BorderRadius.circular(14),
+                        ),
+                        child: const Icon(
+                          Icons.bolt_outlined,
+                          color: Color(0xffC67C4E),
+                        ),
                       )
                     ],
                   )
@@ -200,11 +206,10 @@ class _DetailState extends State<Detail> {
                           text:
                               "A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo.. ",
                           style: GoogleFonts.sora(
-                            color: const Color(0xff9B9B9B),
-                            fontWeight: FontWeight.w400,
-                            fontSize: 14,
-                            height: 1.64
-                          ),
+                              color: const Color(0xff9B9B9B),
+                              fontWeight: FontWeight.w400,
+                              fontSize: 14,
+                              height: 1.64),
                           children: [
                             TextSpan(
                               text: "Read More",
