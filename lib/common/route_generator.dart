@@ -1,5 +1,6 @@
 import 'package:coffee_app/screens/detail.dart';
 import 'package:coffee_app/screens/home.dart';
+import 'package:coffee_app/screens/order.dart';
 import 'package:coffee_app/screens/welcome.dart';
 import 'package:flutter/material.dart';
 import 'app_routes.dart';
@@ -20,6 +21,11 @@ class RouteGenerator {
       case Routes.detail:
         return buildRoute(
           const Detail(),
+          settings: settings,
+        );
+      case Routes.order:
+        return buildRoute(
+          const Order(),
           settings: settings,
         );
       default:

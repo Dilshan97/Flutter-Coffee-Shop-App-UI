@@ -69,7 +69,7 @@ class _WelcomeState extends State<Welcome> {
                       title: 'Get Started',
                       onPressed: () => Navigator.pushNamed(
                         context,
-                        Routes.detail,
+                        Routes.home,
                       ),
                     ),
                   ),

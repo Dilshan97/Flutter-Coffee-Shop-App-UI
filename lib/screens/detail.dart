@@ -1,3 +1,4 @@
+import 'package:coffee_app/common/app_routes.dart';
 import 'package:coffee_app/screens/widgets/coffee_size.dart';
 import 'package:coffee_app/screens/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
@@ -97,7 +98,8 @@ class _DetailState extends State<Detail> {
                     style: GoogleFonts.sora(
                         fontSize: 12,
                         fontWeight: FontWeight.w400,
-                        color: Color(0xff9B9B9B)),
+                        color: Color(0xff9B9B9B),
+                    ),
                   ),
                 ],
               ),
@@ -322,7 +324,7 @@ class _DetailState extends State<Detail> {
                         width: 217,
                         height: 62,
                         child: CustomButton(
-                          onPressed: () {},
+                          onPressed: () => Navigator.pushNamed(context, Routes.order),
                           title: 'Buy Now',
                         ),
                       )
