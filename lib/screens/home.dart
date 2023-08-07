@@ -13,14 +13,13 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+  int selectedCategory = 0;
+    List<String> list = ['Cappuccino', 'Machiato', 'Latte', 'Americano'];
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-
-    List<String> list = ['Cappuccino', 'Machiato', 'Latte', 'Americano'];
-
-    int selectedCategory = 0;
-
     return Scaffold(
       body: Stack(
         children: [
@@ -189,8 +188,9 @@ class _HomeState extends State<Home> {
                                 index: index,
                                 title: list[index],
                                 selectedCategory: selectedCategory,
-                                onClick: () => {
-                                  setState(() => selectedCategory = index)
+                                onClick: () {
+                                  setState(() => selectedCategory = index
+                                  );
                                 },
                               ),
                             ),
@@ -206,17 +206,17 @@ class _HomeState extends State<Home> {
                 width: 315,
                 alignment: Alignment.center,
                 child: GridView(
-                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                  gridDelegate:  SliverGridDelegateWithMaxCrossAxisExtent(
                     maxCrossAxisExtent: 250,
-                    childAspectRatio: 3 / 2,
+                    childAspectRatio: size.width / (size.height / 4),
                     crossAxisSpacing: 40,
                     mainAxisSpacing: 150,
                   ),
                   children: const [
-                    Item(),
-                    Item(),
-                    Item(),
-                    Item(),
+                    Item(image: "assets/images/1.png",),
+                    Item(image: "assets/images/2.png",),
+                    Item(image: "assets/images/3.png",),
+                    Item(image: "assets/images/4.png",),
                   ],
                 ),
               )

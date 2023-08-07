@@ -2,8 +2,16 @@ import 'package:coffee_app/common/app_routes.dart';
 import 'package:coffee_app/common/route_generator.dart';
 import 'package:coffee_app/screens/welcome.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(
+    SystemUiOverlayStyle.dark.copyWith(
+      statusBarColor: Colors.white, // Color for Android
+      statusBarBrightness:
+          Brightness.dark, // Dark == white status bar -- for IOS.
+    ),
+  );
   runApp(const MyApp());
 }
 
@@ -21,7 +29,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const Welcome(),
-      initialRoute: AppRoutes.welcome,
+      initialRoute: Routes.welcome,
       onGenerateRoute: RouteGenerator.generateRoute,
     );
   }

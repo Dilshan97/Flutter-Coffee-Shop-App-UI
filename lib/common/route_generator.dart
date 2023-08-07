@@ -7,17 +7,17 @@ import 'app_routes.dart';
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case AppRoutes.welcome:
+      case Routes.welcome:
         return buildRoute(
           const Welcome(),
           settings: settings,
         );
-      case AppRoutes.home:
+      case Routes.home:
         return buildRoute(
           const Home(),
           settings: settings,
         );
-      case AppRoutes.detail:
+      case Routes.detail:
         return buildRoute(
           const Detail(),
           settings: settings,

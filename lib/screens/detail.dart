@@ -1,3 +1,4 @@
+import 'package:coffee_app/screens/widgets/coffee_size.dart';
 import 'package:coffee_app/screens/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -11,6 +12,8 @@ class Detail extends StatefulWidget {
 }
 
 class _DetailState extends State<Detail> {
+  int selectedSize = 1;
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -27,7 +30,7 @@ class _DetailState extends State<Detail> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () => Navigator.pop(context),
                     icon: const Icon(
                       Icons.chevron_left,
                       color: Color(0xff2F2D2C),
@@ -169,7 +172,7 @@ class _DetailState extends State<Detail> {
               child: Column(
                 children: [
                   SizedBox(
-                    height: size.height * 0.020,
+                    height: size.height * 0.010,
                   ),
                   Container(
                     height: 2,
@@ -191,14 +194,29 @@ class _DetailState extends State<Detail> {
                       SizedBox(
                         height: size.height * 0.010,
                       ),
-                      Text(
-                        "A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo.. Read More",
-                        style: GoogleFonts.sora(
-                          color: Color(0xff9B9B9B),
-                          fontWeight: FontWeight.w400,
-                          fontSize: 14,
+                      RichText(
+                        textAlign: TextAlign.justify,
+                        text: TextSpan(
+                          text:
+                              "A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo.. ",
+                          style: GoogleFonts.sora(
+                            color: const Color(0xff9B9B9B),
+                            fontWeight: FontWeight.w400,
+                            fontSize: 14,
+                            height: 1.64
+                          ),
+                          children: [
+                            TextSpan(
+                              text: "Read More",
+                              style: GoogleFonts.sora(
+                                color: const Color(0xffC67C4E),
+                                fontWeight: FontWeight.w600,
+                                fontSize: 14,
+                              ),
+                            ),
+                          ],
                         ),
-                      ),
+                      )
                     ],
                   ),
                   SizedBox(
@@ -220,59 +238,36 @@ class _DetailState extends State<Detail> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Container(
-                            width: 96,
-                            height: 43,
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                color: Color(0xffDEDEDE),
-                              ),
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: Text(
-                              'S',
-                              style: GoogleFonts.sora(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
+                          CoffeeSize(
+                            title: "S",
+                            index: 0,
+                            selectedSize: selectedSize,
+                            onClick: () {
+                              setState(() {
+                                selectedSize = 0;
+                              });
+                            },
                           ),
-                          Container(
-                            width: 96,
-                            height: 43,
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                              color: Color(0xffFFF5EE),
-                              border: Border.all(color: Color(0xffC67C4E)),
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: Text(
-                              'M',
-                              style: GoogleFonts.sora(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w400,
-                                  color: Color(0xffC67C4E)),
-                            ),
+                          CoffeeSize(
+                            title: "M",
+                            index: 1,
+                            selectedSize: selectedSize,
+                            onClick: () {
+                              setState(() {
+                                selectedSize = 1;
+                              });
+                            },
                           ),
-                          Container(
-                            width: 96,
-                            height: 43,
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                color: Color(0xffDEDEDE),
-                              ),
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: Text(
-                              'L',
-                              style: GoogleFonts.sora(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                          )
+                          CoffeeSize(
+                            title: "L",
+                            index: 2,
+                            selectedSize: selectedSize,
+                            onClick: () {
+                              setState(() {
+                                selectedSize = 2;
+                              });
+                            },
+                          ),
                         ],
                       ),
                     ],

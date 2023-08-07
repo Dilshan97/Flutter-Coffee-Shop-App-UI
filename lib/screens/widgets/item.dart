@@ -3,13 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Item extends StatefulWidget {
-  const Item({super.key});
+  final String image;
+
+  const Item({
+    super.key,
+    required this.image,
+  });
 
   @override
   State<Item> createState() => _ItemState();
 }
 
-class _ItemState extends State<Item> {
+class _ItemState extends State<Item> {  
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,8 +30,7 @@ class _ItemState extends State<Item> {
           SizedBox(
             width: 141,
             height: 132,
-            child: Image.asset(
-              "assets/images/1.png",
+            child: Image.asset(widget.image,
               fit: BoxFit.fill,
             ),
           ),
@@ -36,7 +40,7 @@ class _ItemState extends State<Item> {
           GestureDetector(
             onTap: () => Navigator.pushNamed(
               context,
-              AppRoutes.detail,
+              Routes.detail,
             ),
             child: Text(
               "Cappucino",
@@ -72,7 +76,7 @@ class _ItemState extends State<Item> {
               GestureDetector(
                 onTap: () => Navigator.pushNamed(
                   context,
-                  AppRoutes.detail,
+                  Routes.detail,
                 ),
                 child: Container(
                   width: 32,
