@@ -172,10 +172,16 @@ class _OrderState extends State<Order> {
                   children: [
                     Row(
                       children: [
-                        Image.asset(
-                          "assets/images/1.png",
-                          fit: BoxFit.contain,
+                        Container(
                           width: 54,
+                          height: 54,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Image.asset(
+                            "assets/images/1.png",
+                            fit: BoxFit.contain,
+                          ),
                         ),
                         const SizedBox(
                           width: 12,
@@ -283,9 +289,12 @@ class _OrderState extends State<Order> {
                   right: 20,
                 ),
                 decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(14),
-                    border: Border.all(color: const Color(0xffEAEAEA))),
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(14),
+                  border: Border.all(
+                    color: const Color(0xffEAEAEA),
+                  ),
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -315,7 +324,7 @@ class _OrderState extends State<Order> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Container(
@@ -418,89 +427,92 @@ class _OrderState extends State<Order> {
                 width: 376,
                 height: 161,
                 padding: const EdgeInsets.only(
-                  top: 15,
+                  top: 25,
                 ),
-                decoration: BoxDecoration(
-                  border: Border.all(),
-                  borderRadius: const BorderRadius.only(
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(24),
                     topRight: Radius.circular(24),
                   ),
                 ),
                 child: Column(
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            const Icon(
-                              Iconsax.money,
-                              color: Color(0xffC67C4E),
-                              weight: 24,
-                            ),
-                            const SizedBox(
-                              width: 10,
-                            ),
-                            Container(
-                              width: 112,
-                              height: 24,
-                              decoration: BoxDecoration(
-                                color: const Color(0xffF6F6F6),
-                                borderRadius: BorderRadius.circular(20),
+                    SizedBox(
+                      width: 315,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              const Icon(
+                                Iconsax.money,
+                                color: Color(0xffC67C4E),
+                                weight: 24,
                               ),
-                              child: Row(
-                                children: [
-                                  Container(
-                                    width: 51,
-                                    height: 24,
-                                    alignment: Alignment.center,
-                                    decoration: BoxDecoration(
-                                        color: Color(0xffC67C4E),
-                                        borderRadius:
-                                            BorderRadius.circular(20)),
-                                    child: Text(
-                                      "Cash",
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Container(
+                                width: 112,
+                                height: 24,
+                                decoration: BoxDecoration(
+                                  color: const Color(0xffF6F6F6),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      width: 51,
+                                      height: 24,
+                                      alignment: Alignment.center,
+                                      decoration: BoxDecoration(
+                                          color: Color(0xffC67C4E),
+                                          borderRadius:
+                                              BorderRadius.circular(20)),
+                                      child: Text(
+                                        "Cash",
+                                        style: GoogleFonts.sora(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w400,
+                                          color: Colors.white,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text(
+                                      "\$ 5.53",
                                       style: GoogleFonts.sora(
                                         fontSize: 12,
                                         fontWeight: FontWeight.w400,
-                                        color: Colors.white,
                                       ),
-                                      textAlign: TextAlign.center,
                                     ),
-                                  ),
-                                  const SizedBox(
-                                    width: 10,
-                                  ),
-                                  Text(
-                                    "\$ 5.53",
-                                    style: GoogleFonts.sora(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w400,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            )
-                          ],
-                        ),
-                        Container(
-                          width: 24,
-                          height: 24,
-                          decoration: BoxDecoration(
-                            color: Color(0xff808080),
-                            borderRadius: BorderRadius.circular(50),
+                                  ],
+                                ),
+                              )
+                            ],
                           ),
-                          child: Icon(
-                            Iconsax.more,
-                            size: 19.2,
-                            color: Colors.white,
-                          ),
-                        )
-                      ],
+                          Container(
+                            width: 24,
+                            height: 24,
+                            decoration: BoxDecoration(
+                              color: Color(0xff808080),
+                              borderRadius: BorderRadius.circular(50),
+                            ),
+                            child: const Icon(
+                              Iconsax.more,
+                              size: 19.2,
+                              color: Colors.white,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                     const SizedBox(
-                      height: 12,
+                      height: 15,
                     ),
                     SizedBox(
                       width: 315,
