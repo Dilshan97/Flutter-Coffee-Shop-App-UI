@@ -44,18 +44,49 @@ class _BannerCardState extends State<BannerCard> {
                 ),
               ),
             ),
-            DecoratedBox(
-              decoration: const BoxDecoration(
-                color: Colors.black26,
-              ),
-              child: Text(
-                "Buy one get \none FREE",
-                style: GoogleFonts.sora(
-                  fontSize: 32,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.white,
+            Stack(
+              children: [
+                Positioned(
+                  top: 17,
+                  child: Container(
+                    width: 200,
+                    height: 27,
+                    decoration: const BoxDecoration(
+                      color: Color(0xff1C1C1C),
+                    ),
+                  ),
                 ),
-              ),
+                Text(
+                  "Buy one get",
+                  style: GoogleFonts.sora(
+                    fontSize: 32,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            ),
+            Stack(
+              children: [
+                Positioned(
+                  top: 17,
+                  child: Container(
+                    width: 149,
+                    height: 23,
+                    decoration: const BoxDecoration(
+                      color: Color(0xff1C1C1C),
+                    ),
+                  ),
+                ),
+                Text(
+                  "one FREE",
+                  style: GoogleFonts.sora(
+                    fontSize: 32,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
             )
           ],
         ),
