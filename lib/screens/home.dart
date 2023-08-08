@@ -1,4 +1,5 @@
-import 'package:coffee_app/common/app_routes.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:coffee_app/screens/widgets/banner.dart';
 import 'package:coffee_app/screens/widgets/category_item.dart';
 import 'package:coffee_app/screens/widgets/item.dart';
 import 'package:flutter/material.dart';
@@ -13,9 +14,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
   int selectedCategory = 0;
-    List<String> list = ['Cappuccino', 'Machiato', 'Latte', 'Americano'];
+  List<String> list = ['Cappuccino', 'Machiato', 'Latte', 'Americano'];
 
   @override
   Widget build(BuildContext context) {
@@ -130,54 +130,20 @@ class _HomeState extends State<Home> {
                       SizedBox(
                         height: size.height * 0.020,
                       ),
-                      Container(
+                      SizedBox(
                         width: 315,
                         height: 140,
-                        decoration: BoxDecoration(
-                          image: const DecorationImage(
-                            image: AssetImage("assets/images/banner.png"),
-                            fit: BoxFit.contain,
+                        child: CarouselSlider(
+                          options: CarouselOptions(
+                              viewportFraction: 1,
+                              enlargeFactor: 0.3,
+                              height: size.height * 0.22,
+                              enlargeCenterPage: true,
+                              autoPlay: true,
                           ),
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                width: 60,
-                                height: 26,
-                                alignment: Alignment.center,
-                                decoration: BoxDecoration(
-                                  color: const Color(0xffED5151),
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
-                                child: Text(
-                                  "Promo",
-                                  style: GoogleFonts.sora(
-                                    color: Colors.white,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                              ),
-                              DecoratedBox(
-                                decoration: const BoxDecoration(
-                                  color: Colors.black26, 
-                                ),
-                                child: Text(
-                                "Buy one get \none FREE",
-                                style: GoogleFonts.sora(
-                                  fontSize: 32,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.white,
-                                ),
-                              ),
-                              )
-                              
-                            ],
+                          items: List.generate(
+                            5,
+                            (index) => const BannerCard(),
                           ),
                         ),
                       ),
@@ -196,8 +162,7 @@ class _HomeState extends State<Home> {
                                 title: list[index],
                                 selectedCategory: selectedCategory,
                                 onClick: () {
-                                  setState(() => selectedCategory = index
-                                  );
+                                  setState(() => selectedCategory = index);
                                 },
                               ),
                             ),
@@ -213,17 +178,25 @@ class _HomeState extends State<Home> {
                 width: 315,
                 alignment: Alignment.center,
                 child: GridView(
-                  gridDelegate:  SliverGridDelegateWithMaxCrossAxisExtent(
+                  gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                     maxCrossAxisExtent: size.width / 2,
                     crossAxisSpacing: 15,
                     mainAxisSpacing: 10,
                     mainAxisExtent: 239,
                   ),
                   children: const [
-                    Item(image: "assets/images/1.png",),
-                    Item(image: "assets/images/2.png",),
-                    Item(image: "assets/images/3.png",),
-                    Item(image: "assets/images/4.png",),
+                    Item(
+                      image: "assets/images/1.png",
+                    ),
+                    Item(
+                      image: "assets/images/2.png",
+                    ),
+                    Item(
+                      image: "assets/images/3.png",
+                    ),
+                    Item(
+                      image: "assets/images/4.png",
+                    ),
                   ],
                 ),
               )
