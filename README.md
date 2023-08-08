@@ -1,16 +1,8 @@
-# coffee_app
+# Coffee App Ui Design
 
-A new Flutter project.
+A simple Coffee App UI concept.
 
-## Getting Started
+### App UI's
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+| <img src="https://github.com/Dilshan97/Flutter-Coffee-Shop-App-UI/blob/main/screenshots/1.png" style="width: 350px;"/> |  <img src="https://github.com/Dilshan97/Flutter-Coffee-Shop-App-UI/blob/main/screenshots/2.png" style="width: 350px;"/>  |
+|--|--|
