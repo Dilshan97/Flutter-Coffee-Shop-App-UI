@@ -2,6 +2,7 @@ import 'package:coffee_app/common/app_routes.dart';
 import 'package:coffee_app/screens/widgets/coffee_size.dart';
 import 'package:coffee_app/screens/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -14,6 +15,18 @@ class Detail extends StatefulWidget {
 
 class _DetailState extends State<Detail> {
   int selectedSize = 1;
+
+  @override
+  void initState() {
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle.dark.copyWith(
+        statusBarColor: Colors.white, // Color for Android
+        statusBarBrightness:
+            Brightness.light, // Dark == white status bar -- for IOS.
+      ),
+    );
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -96,9 +109,9 @@ class _DetailState extends State<Detail> {
                   Text(
                     "with Chocolate",
                     style: GoogleFonts.sora(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                        color: Color(0xff9B9B9B),
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xff9B9B9B),
                     ),
                   ),
                 ],
@@ -324,7 +337,8 @@ class _DetailState extends State<Detail> {
                         width: 217,
                         height: 62,
                         child: CustomButton(
-                          onPressed: () => Navigator.pushNamed(context, Routes.order),
+                          onPressed: () =>
+                              Navigator.pushNamed(context, Routes.order),
                           title: 'Buy Now',
                         ),
                       )
