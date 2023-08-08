@@ -21,6 +21,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Color(0xffF9F9F9),
       body: Stack(
         children: [
           Container(
@@ -162,14 +163,20 @@ class _HomeState extends State<Home> {
                                   ),
                                 ),
                               ),
-                              Text(
+                              DecoratedBox(
+                                decoration: const BoxDecoration(
+                                  color: Colors.black26, 
+                                ),
+                                child: Text(
                                 "Buy one get \none FREE",
                                 style: GoogleFonts.sora(
                                   fontSize: 32,
                                   fontWeight: FontWeight.w600,
                                   color: Colors.white,
                                 ),
+                              ),
                               )
+                              
                             ],
                           ),
                         ),
@@ -202,15 +209,15 @@ class _HomeState extends State<Home> {
                 ),
               ),
               Container(
-                height: 390,
+                height: 430,
                 width: 315,
                 alignment: Alignment.center,
                 child: GridView(
                   gridDelegate:  SliverGridDelegateWithMaxCrossAxisExtent(
-                    maxCrossAxisExtent: 250,
-                    childAspectRatio: size.width / (size.height / 4),
-                    crossAxisSpacing: 40,
-                    mainAxisSpacing: 150,
+                    maxCrossAxisExtent: size.width / 2,
+                    crossAxisSpacing: 15,
+                    mainAxisSpacing: 10,
+                    mainAxisExtent: 239,
                   ),
                   children: const [
                     Item(image: "assets/images/1.png",),

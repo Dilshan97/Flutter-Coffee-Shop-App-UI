@@ -17,91 +17,93 @@ class Item extends StatefulWidget {
 class _ItemState extends State<Item> {
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => Navigator.pushNamed(
-        context,
-        Routes.detail,
-      ),
-      child: Container(
-        height: 500,
-        alignment: Alignment.center,
-        decoration: const BoxDecoration(
+    return Container(
+        height: 239,
+        width: 150,
+        decoration: BoxDecoration(
           color: Colors.white,
+          borderRadius: BorderRadius.circular(16),
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(
-              width: 141,
-              height: 132,
-              child: Image.asset(
-                widget.image,
-                fit: BoxFit.fill,
-              ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            GestureDetector(
-              onTap: () => Navigator.pushNamed(
-                context,
-                Routes.detail,
-              ),
-              child: Text(
-                "Cappucino",
-                style: GoogleFonts.sora(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
-                  color: const Color(0xff2F2D2C),
+        child: Padding(
+          padding: const EdgeInsets.only(
+            left: 13,
+            right: 13,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: 142,
+                height: 132,
+                alignment: Alignment.center,
+                child: Image.asset(
+                  widget.image,
+                  fit: BoxFit.contain,
+                  width: 142,
                 ),
               ),
-            ),
-            Text(
-              'with Chocolate',
-              style: GoogleFonts.sora(
-                fontSize: 12,
-                fontWeight: FontWeight.w400,
-                color: const Color(0xff9B9B9B),
-              ),
-            ),
-            const SizedBox(
-              height: 0.080,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "\$ 4.53",
+              GestureDetector(
+                onTap: () => Navigator.pushNamed(
+                  context,
+                  Routes.detail,
+                ),
+                child: Text(
+                  "Cappucino",
                   style: GoogleFonts.sora(
-                    fontSize: 18,
+                    fontSize: 16,
                     fontWeight: FontWeight.w600,
-                    color: const Color(0xff2F4B4E),
+                    color: const Color(0xff2F2D2C),
                   ),
                 ),
-                GestureDetector(
-                  onTap: () => Navigator.pushNamed(
-                    context,
-                    Routes.detail,
-                  ),
-                  child: Container(
-                    width: 32,
-                    height: 32,
-                    decoration: BoxDecoration(
-                      color: const Color(0xffC67C4E),
-                      borderRadius: BorderRadius.circular(10),
+              ),
+              const SizedBox(
+                height: 4,
+              ),
+              Text(
+                'with Chocolate',
+                style: GoogleFonts.sora(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w400,
+                  color: const Color(0xff9B9B9B),
+                ),
+              ),
+              const SizedBox(
+                height: 11,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "\$ 4.53",
+                    style: GoogleFonts.sora(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: const Color(0xff2F4B4E),
                     ),
-                    child: const Icon(
-                      Icons.add,
-                      color: Colors.white,
-                    ),
                   ),
-                )
-              ],
-            )
-          ],
+                  GestureDetector(
+                    onTap: () => Navigator.pushNamed(
+                      context,
+                      Routes.detail,
+                    ),
+                    child: Container(
+                      width: 32,
+                      height: 32,
+                      decoration: BoxDecoration(
+                        color: const Color(0xffC67C4E),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: const Icon(
+                        Icons.add,
+                        color: Colors.white,
+                      ),
+                    ),
+                  )
+                ],
+              )
+            ],
+          ),
         ),
-      ),
-    );
+      );
   }
 }
